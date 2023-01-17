@@ -9,7 +9,7 @@ Calculates tile colours for that guess
 Excludes words that don't fit 
 Makes subsequent guesses until the correct word is found
 
-Making a change
+Making another change
 """
 
 
