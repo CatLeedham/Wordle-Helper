@@ -4,3 +4,5 @@ Wordle-Helper can be used alongside Wordle to exclude words that aren't correct 
 
 There is also a version that takes a word as an imput and will make guesses until it finds it.
 
+# How Does Wordle-Helper Work?
+
