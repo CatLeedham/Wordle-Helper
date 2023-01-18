@@ -18,14 +18,6 @@ The Wordle solver also uses a function to work out the tile colours based on the
 
 Once certain words have been excluded from the list, a suggestion for the next guess will be made. This is based on letter frequencies. Words are scored by how frequently their letters appear in the full list of words. The 'OrderedWords' files contain words in this order.
 
-## Wordle Helper Usage
-
-The file Wordle_helper.py should be used alongside online Wordle. It asks the user for their guess and the tile colours at each stage of the game.
-It will reduce the list of possible words based on this and suggest the next word to guess. The user also has the option of seeing all remaining words.
-
-## Wordle Solver Usage
-
-The file Wordle_solver.py takes the correct word as an input and will make guesses and reduce the list until it solves it.
 
 ## Word List
 
@@ -55,15 +47,24 @@ Alternatively, to replicate the environment using conda environments:
 conda env create -f environment.yml 
 conda activate wordleenv
 ```
+### Wordle Helper
 
-The Wordle helper and solver can then by run via
+The Wordle helper can be run via
 
 ```
 python3 Wordle_helper.py
 ```
-and 
+Follow the instructions to enter the word you guessed in Wordle and its tile colours.
+
+It will suggest the next guess and give you the option of seeing all remaining words.
+
+
+## Wordle Solver Usage
+
+The Wordle helper can be run via
 
 ```
 python3 Wordle_solver.py
 ```
-Follow the instructions printed to the command line.
+
+Follow the instructions to choose whether it is solving for a word from the full list of accepted Wordle words or the list of Wordle solution words. Choose a word for it to find and it will return how many guesses it took and which words it used.
