@@ -3,27 +3,19 @@
 Automatic Wordle solver
 
 Takes a correct word as an input
-
 Makes a guess
 Calculates tile colours for that guess
 Excludes words that don't fit 
 Makes subsequent guesses until the correct word is found
 
+Can be set to either use the list of accepted words or list of solution words
 
-"""
-
- 
- 
+""" 
 
 import Wordle_functions as wf
 import numpy as np
 
-
-
-
-full_list=np.loadtxt("./OrderedWords12953.txt",dtype="str")
-short_list=np.loadtxt("./OrderedWords2315.txt",dtype="str")
-
+#Opening instructions
 print("Welcome to the Wordle solver!")
 print("Choose a word and it will make guesses until it finds it")
 print("This solver can operate from the full list of accepted Wordle words or the shorter list of words that Wordle selects the solution from.")
@@ -32,6 +24,7 @@ print("Full - f")
 print("Short - s")
 choice = input("Choose list:")
 
+#Validating input
 while choice != 'f' and choice != 's':    
     print("I'm sorry, that input isn't accepted. Please type 'f' or 's'")
     choice = input("Choose list:")
@@ -41,20 +34,18 @@ print("Now choose a word for it to find")
 
 correct_word = input("Choose a word:")
 
+guess1 = 'crane'
+guess2 = 'slipt'
+
+#Full list of words
 if choice == 'f':
+	
+	full_list=np.loadtxt("./OrderedWords12953.txt",dtype="str")
+	
 	while correct_word not in full_list:
 		print("I'm sorry, that word is not in the list of accepted Wordle words")
 		correct_word = input("Choose a word:")
 		
-	    
-
-	guess1 = 'crane'
-	guess2 = 'slipt'
-
-
-
-
-
 
 	tiles = wf.tile_colours(correct_word,guess1) 
 	full_list = wf.better_reduce_list(full_list,tiles,guess1)
@@ -77,27 +68,23 @@ if choice == 'f':
     	      
     		print( "Guess", i+2,":",guess,"   Words left: ", np.size(full_list))
     		if words_left == 0:
-    		    assert(guess == correct_word)
+    		    assert(guess == correct_word) #Checking solution matches input
     	    
     		    print("Solved in",i+2,"guesses!")
     		    break
     		else:
     		    guess = full_list[0]
 
+		
+		
+#Shorter list of words
 elif choice == 's':
+	
+	short_list=np.loadtxt("./OrderedWords2315.txt",dtype="str")
+	
 	while correct_word not in short_list:
 		print("I'm sorry, that word is not in the shorter list of possible solutions")
 		correct_word = input("Choose a word:")
-		
-	    
-
-	guess1 = 'crane'
-	guess2 = 'slipt'
-
-
-
-
-
 
 	tiles = wf.tile_colours(correct_word,guess1) 
 	short_list = wf.better_reduce_list(short_list,tiles,guess1)
@@ -120,7 +107,7 @@ elif choice == 's':
     	      
     		print( "Guess", i+2,":",guess,"   Words left: ", np.size(short_list))
     		if words_left == 0:
-    		    assert(guess == correct_word)
+    		    assert(guess == correct_word) #Checking solution matches input
     	    
     		    print("Solved in",i+2,"guesses!")
     		    break
