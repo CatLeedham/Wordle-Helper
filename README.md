@@ -52,6 +52,8 @@ pip install -r requirements.txt
 Alternatively, to replicate the environment using conda environments:
 
 ```
+conda env create -f environment.yml 
+conda activate wordleenv
 ```
 
 The Wordle helper and solver can then by run via
