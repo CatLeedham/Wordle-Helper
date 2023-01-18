@@ -1,11 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Fri Jan  6 15:54:03 2023
 
-@author: cscl3
-
-Wordle solver to be used alongside the online Wordle
+Wordle helper to be used alongside the online Wordle
 
 User tries guesses online and tells the program the output
 
@@ -27,6 +22,7 @@ new_list = secret_order
 first_guess = 'crane'
 answer = '-'
 
+#Opening instructions
 print("Welcome to the Wordle helper!")
 print("This interactive program should be used alongisde online Wordle")
 print("Just tell it your guess and the colour of the corresponding tiles")
@@ -34,13 +30,13 @@ print("It will work out the remaining list of possible words and suggest the nex
 print("Suggested first guess: ", first_guess)
 print("Now try a first guess in Wordle online")
 
-out_of_guesses = True
 
+out_of_guesses = True #Remains true unless the word is found
 
+#For 6 allowed guesses 
 for i in range(6):
     
     Guess = input("Enter your guess:").strip()
-    print(Guess)
     
     while Guess not in all_words:
         print("I'm sorry, Wordle won't accept that word. Please try again.")
@@ -61,6 +57,7 @@ for i in range(6):
         out_of_guesses = False
         break
     
+    #Checking the user input
     while len(tiles) != 5 or bool(re.search('^[gby]+$', tiles)) is False:
         if len(tiles) != 5:
             print("That's not the right number of tiles. Please try again.")
@@ -73,7 +70,7 @@ for i in range(6):
 
     Tiles = list(tiles)
 
-    new_list = wf.better_reduce_list(new_list,Tiles,Guess)
+    new_list = wf.better_reduce_list(new_list,Tiles,Guess) #Excluding words
 
     words_left = np.size(new_list)
     
@@ -106,6 +103,7 @@ for i in range(6):
         if answer == 'y'  or answer == 'Y' or answer == 'yes' or answer == 'Yes':
             print(new_list)
     
+
     
 if out_of_guesses == True:
     print("Looks like you've run out of guesses")
