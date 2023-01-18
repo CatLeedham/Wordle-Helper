@@ -27,21 +27,13 @@ The solver program can be used with two options. You can choose to let it know a
 
 ## Usage
 
-All code is written in Python using packages listed in requirements.txt.
-
 To run the code, first clone the repository and move to it:
 ```
 git clone https://github.com/CatLeedham/Wordle-Helper.git
 cd Wordle-Helper
 ```
-
-
-To install the required packages:
-```
-pip install -r requirements.txt
-```
-
-Alternatively, to replicate the environment using conda environments:
+All code is written in Python using packages listed in requirements.txt.
+To replicate the environment with these using conda environments:
 
 ```
 conda env create -f environment.yml 
