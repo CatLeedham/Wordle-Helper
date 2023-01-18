@@ -9,13 +9,13 @@ Calculates tile colours for that guess
 Excludes words that don't fit 
 Makes subsequent guesses until the correct word is found
 
-Making another change
+
 """
 
 
 import Wordle_functions as wf
 import numpy as np
-import random
+
 
 
 word_list=np.loadtxt("./OrderedWords12953.txt",dtype="str")
