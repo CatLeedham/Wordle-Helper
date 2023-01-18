@@ -12,8 +12,7 @@
     
     
     Written by Cat Leedham
-    
-Adding another change again
+ 
 """
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -21,6 +20,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 import numpy as np
 import pandas as pd
+
 
 def tile_colours(correct_word,guess):
     """
