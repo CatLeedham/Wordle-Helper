@@ -33,4 +33,35 @@ Wordle will accept five letter words from a list of 12953, but the correct word 
 
 The solver program can be used with two options. You can choose to let it know about the shorter list and give it a correct word to find from this list or it can be made to solve for a word from the longer list.
 
+## Usage
 
+All code is written in Python using packages listed in requirements.txt.
+
+To run the code, first clone the repository and move to it:
+```
+git clone https://github.com/CatLeedham/Wordle-Helper.git
+cd Wordle-Helper
+```
+
+
+To install the required packages:
+```
+pip install -r requirements.txt
+```
+
+Alternatively, to replicate the environment using conda environments:
+
+```
+```
+
+The Wordle helper and solver can then by run via
+
+```
+python3 Wordle_helper.py
+```
+and 
+
+```
+python3 Wordle_solver.py
+```
+Follow the instructions printed to the command line.
